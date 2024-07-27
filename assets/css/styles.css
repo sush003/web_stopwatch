@@ -1,0 +1,82 @@
+:root{
+    --c-font: #D3D0CB;
+    --c-body:#393E41;
+    --fontbase:"boska","san-serif";
+}
+
+body{
+    background:var(--c-body) ;
+}
+
+.container{
+    background-color: #D3D0CB;
+    position: absolute;
+    width: 60%;
+    min-width: 400px;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    padding:60px 0;
+    padding-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    
+}
+.timer-display{
+    font-size: 100px;
+    color: var(--c-body);
+    font-family: 'boska','san-serif';
+    position: relative;
+    width: 90%;
+    left: 5%;
+    background: white;
+    padding: 40px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.buttonss{
+    width: 90%;
+    margin: 60px auto 0 auto;
+    display: flex;
+    justify-content:space-around;
+}
+.buttonss button{
+    width: 120px;
+    height: 45px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color:#67696a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    animation-name: zoomout;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+}
+.buttonss :hover{
+    animation-name: zoomin;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    /* transform: scale(1.04); */
+
+}
+@keyframes zoomin{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.05);
+    }
+}
+@keyframes zoomout{
+    from{
+        transform: scale(1.05);
+    }
+    to{
+        transform: scale(1);
+    }
+}
