@@ -1,6 +1,12 @@
 let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
 let timeRef = document.querySelector(".timer-display");
 let int = null;
+let startTime;
+let elapsedTime = 0;
+let running = false;
+let lapNumber = 0;
+const lapBtn = document.getElementById("lapBtn");
+const lapsList = document.getElementById("lapsList");
 
 document.getElementById("start-timer").addEventListener("click", () => {
   if (int !== null) {
@@ -46,3 +52,22 @@ function displayTimer() {
 
   timeRef.innerHTML = `${h} : ${m} : ${s} : ${ms}`;
 }
+function addLap() {
+  if (running) {
+    if (lapNumber < 10) {
+      lapNumber++;
+      let lapTime = formatTime(Date.now() - startTime + elapsedTime);
+      let lapElement = document.createElement("li");
+      lapElement.textContent = `Lap ${lapNumber}: ${lapTime}`;
+      lapsList.appendChild(lapElement);
+    } else {
+      alert("Maximum of 10 laps reached.");
+    }
+  }
+}
+
+startStopBtn.addEventListener("click", startStop);
+resetBtn.addEventListener("click", reset);
+lapBtn.addEventListener("click", addLap);
+
+updateDisplay(elapsedTime);

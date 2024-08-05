@@ -80,3 +80,28 @@ body{
         transform: scale(1);
     }
 }
+.laps {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.laps h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#lapsList {
+    list-style-type: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#lapsList li {
+    background: #f9f9f9;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: #333;
+    border: 1px solid #ccc;
+}
